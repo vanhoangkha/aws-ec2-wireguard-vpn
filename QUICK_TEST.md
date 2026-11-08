@@ -1,6 +1,6 @@
 # Quick Test Guide
 
-## 🚀 Quick Setup Commands
+## Quick Setup Commands
 
 ### On EC2 Server:
 ```bash
@@ -34,14 +34,14 @@ aws ec2 authorize-security-group-ingress --group-id sg-xxxxxxxxx --protocol tcp 
 aws ec2 authorize-security-group-ingress --group-id sg-xxxxxxxxx --protocol udp --port 51820 --cidr 0.0.0.0/0 --region your-region
 ```
 
-## 🌐 Access WireGuard UI
+## Access WireGuard UI
 
 1. **URL**: http://YOUR-EC2-PUBLIC-IP
 2. **Login**: admin / password
 3. **Configure server** with iptables rules
 4. **Create client** and download .conf file
 
-## 💻 Client Test Commands
+## Client Test Commands
 
 ### Ubuntu Client:
 ```bash
@@ -71,7 +71,7 @@ sudo wg-quick down wg0
 3. Click "Activate"
 4. Check IP at https://whatismyipaddress.com/
 
-## ✅ Verification Checklist
+## Verification Checklist
 
 - [ ] EC2 instance running
 - [ ] Docker containers up
@@ -83,7 +83,7 @@ sudo wg-quick down wg0
 - [ ] IP address changed to EC2 IP
 - [ ] Internet access through VPN working
 
-## 🔧 Quick Troubleshooting
+## Quick Troubleshooting
 
 ```bash
 # Restart containers
@@ -101,21 +101,21 @@ sudo netstat -ulnp | grep :51820
 curl -I http://localhost:80
 ```
 
-## 📊 Test Results Template
+## Test Results Template
 
 **Server Info:**
 - EC2 Public IP: `_____________`
 - WireGuard UI: `http://_____________`
-- Server Status: ✅ / ❌
+- Server Status: /
 
 **Client Test:**
 - OS: Ubuntu / Windows
-- Connection Status: ✅ / ❌
+- Connection Status: /
 - IP Before VPN: `_____________`
 - IP After VPN: `_____________`
-- Internet Access: ✅ / ❌
+- Internet Access: /
 
 **Performance:**
 - Connection Speed: `_____________`
 - Latency: `_____________`
-- DNS Resolution: ✅ / ❌
+- DNS Resolution: /

@@ -2,7 +2,7 @@
 
 A complete guide to set up WireGuard VPN server on AWS EC2 (Ubuntu) with Docker and connect from local machines (Ubuntu/Windows).
 
-## 📋 Table of Contents
+## Table of Contents
 
 - [Prerequisites](#prerequisites)
 - [EC2 Setup](#ec2-setup)
@@ -15,14 +15,14 @@ A complete guide to set up WireGuard VPN server on AWS EC2 (Ubuntu) with Docker 
 - [Troubleshooting](#troubleshooting)
 - [Security Considerations](#security-considerations)
 
-## 🚀 Prerequisites
+## Prerequisites
 
 - AWS Account with EC2 access
 - Ubuntu EC2 instance (t2.micro or larger)
 - Basic knowledge of Linux commands
 - SSH access to EC2 instance
 
-## 🖥️ EC2 Setup
+## EC2 Setup
 
 ### 1. Launch EC2 Instance
 
@@ -38,7 +38,7 @@ A complete guide to set up WireGuard VPN server on AWS EC2 (Ubuntu) with Docker 
 ssh -i your-key.pem ubuntu@your-ec2-public-ip
 ```
 
-## 🔧 WireGuard Installation
+## WireGuard Installation
 
 ### 1. Update System and Install Dependencies
 
@@ -145,7 +145,7 @@ b6d236fd6abe   ngoduykhanh/wireguard-ui:latest           "./init.sh"   7 seconds
 920d0078bdf8   linuxserver/wireguard:v1.0.20210914-ls6   "/init"       8 seconds ago   Up 7 seconds   0.0.0.0:51820->51820/udp, [::]:51820->51820/udp, 0.0.0.0:80->5000/tcp, [::]:80->5000/tcp   wireguard
 ```
 
-## 🔒 Security Group Configuration
+## Security Group Configuration
 
 Configure AWS Security Group to allow necessary ports:
 
@@ -186,7 +186,7 @@ aws ec2 authorize-security-group-ingress \
     --region your-region
 ```
 
-## 🌐 WireGuard UI Configuration
+## WireGuard UI Configuration
 
 ### 1. Access WireGuard UI
 
@@ -228,7 +228,7 @@ http://YOUR-EC2-PUBLIC-IP
 5. **Go to "Wireguard Clients" tab**
 6. **Click "Download"** to get the `.conf` file
 
-## 💻 Client Setup
+## Client Setup
 
 ### Ubuntu Client
 
@@ -300,7 +300,7 @@ sudo systemctl status wg-quick@wg0
 2. **Click on client name** to view QR code
 3. **Use WireGuard mobile app** to scan QR code
 
-## 🧪 Testing Connection
+## Testing Connection
 
 ### 1. Check IP Address
 
@@ -353,7 +353,7 @@ peer: [server-public-key]
 2. **Check active connections**
 3. **Monitor data transfer**
 
-## 🔧 Troubleshooting
+## Troubleshooting
 
 ### Common Issues and Solutions
 
@@ -436,7 +436,7 @@ sudo docker logs wireguard-ui
 sudo journalctl -u wg-quick@wg0
 ```
 
-## 🔐 Security Considerations
+## Security Considerations
 
 ### 1. Change Default Credentials
 
@@ -489,20 +489,20 @@ sudo docker-compose up -d
 - **Monitor unusual connection patterns**
 - **Review client configurations** periodically
 
-## 📚 Additional Resources
+## Additional Resources
 
 - [WireGuard Official Documentation](https://www.wireguard.com/)
 - [Docker Compose Documentation](https://docs.docker.com/compose/)
 - [AWS Security Groups](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html)
 
-## 🤝 Contributing
+## Contributing
 
 Feel free to submit issues and enhancement requests!
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License.
 
 ---
 
-**⚠️ Important Security Note**: This setup is for educational and development purposes. For production use, implement additional security measures including proper authentication, monitoring, and access controls.
+**Important Security Note**: This setup is for educational and development purposes. For production use, implement additional security measures including proper authentication, monitoring, and access controls.
